@@ -1,0 +1,261 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xlmns="http://w3.org/1999/xhtml">
+<head>
+  <title>Ben's Javascript Complex Scientific Calculator</title>
+
+
+</head>
+
+
+<body style="background-color: beige;">
+<h1 align="center"><font face="arial, helevica"><strong><u>Ben's
+JavaScript Complex Scientific Calculator</u></strong></font></h1>
+
+<script language="javaScript" type="text/javaScript">
+
+<!-- This is a JavaScript complex scientific calculator that performs several calculations including basic math (adding, subtracting, square roots, percents, rounding), algebraic functions (exponents, logarithms), and trigonometric functions (sine, cosine, and tangent). All trigonometric results are displayed only in radians, NOT degrees by default. -->
+
+<!-- To create this complex calculator, I used JavaScript Math object functions, such as Math.sin, Math.round, etc.  For the layout of this calculator, I had created a table (with invisible borders) using HTML. -->
+
+var num1,num2;
+
+function AddAChar(inChar)
+{
+if(document.cmplxcalc.txtbox_area.value == null || document.cmplxcalc.txtbox_area.value == "0")
+         document.cmplxcalc.txtbox_area.value=inChar
+    else
+ document.cmplxcalc.txtbox_area.value +=inChar;
+}
+
+function Clear() 
+{
+document.cmplxcalc.txtbox_area.value="0";
+}
+
+function Answer() 
+{
+    document.cmplxcalc.txtbox_area.value= eval(document.cmplxcalc.txtbox_area.value)
+}
+
+
+function sin()
+{
+document.cmplxcalc.txtbox_area.value = Math.sin(document.cmplxcalc.txtbox_area.value); 
+}
+
+
+function cos()
+{
+document.cmplxcalc.txtbox_area.value = Math.cos(document.cmplxcalc.txtbox_area.value); 
+}
+
+function tan()
+{
+document.cmplxcalc.txtbox_area.value = Math.tan(document.cmplxcalc.txtbox_area.value); 
+}
+
+function pi() 
+{
+ document.cmplxcalc.txtbox_area.value = Math.PI ;
+}
+
+function acos() 
+{
+ document.cmplxcalc.txtbox_area.value = Math.acos(document.cmplxcalc.txtbox_area.value); 
+}
+
+function asin() 
+{
+ document.cmplxcalc.txtbox_area.value = Math.asin(document.cmplxcalc.txtbox_area.value); 
+}
+
+function atan() 
+{
+ document.cmplxcalc.txtbox_area.value = Math.atan(document.cmplxcalc.txtbox_area.value); 
+}
+
+function rand()
+{
+   document.cmplxcalc.txtbox_area.value = Math.random(document.cmplxcalc.txtbox_area.value); 
+}
+
+function Euler()
+{
+	document.cmplxcalc.txtbox_area.value= Math.E ; 
+}
+
+function sqrt() 
+{
+	document.cmplxcalc.txtbox_area.value= Math.sqrt(document.cmplxcalc.txtbox_area.value); 
+}
+
+function natLog() 
+{
+	document.cmplxcalc.txtbox_area.value= Math.log(document.cmplxcalc.txtbox_area.value); 
+}
+
+function Log() 
+{
+        document.cmplxcalc.txtbox_area.value=( 1/Math.LN10 ) * Math.log(document.cmplxcalc.txtbox_area.value); 
+}
+
+function percent() 
+{
+        document.cmplxcalc.txtbox_area.value=(document.cmplxcalc.txtbox_area.value)/100 ;
+}
+
+function Round() 
+{
+        document.cmplxcalc.txtbox_area.value=Math.round(document.cmplxcalc.txtbox_area.value); 
+}
+
+function square() 
+{ 
+num1=document.cmplxcalc.txtbox_area.value
+num2=document.cmplxcalc.txtbox_area.value
+var inChar=num1 * num2 
+document.cmplxcalc.txtbox_area.value=inChar
+}
+
+function negative()
+{
+document.cmplxcalc.txtbox_area.value =  0 - document.cmplxcalc.txtbox_area.value;
+}
+
+</script>
+<br  />
+
+<br  />
+
+<br  />
+
+<form method="post" name="cmplxcalc" id="cmplxcalc">
+  <table style="height: 200px; width: 500px;" align="center" bgcolor="gray" border="0" cellpadding="3" cellspacing="3">
+  
+    <tbody>
+
+      <tr>
+
+        <td colspan="4" align="center"><input name="txtbox_area" id="txtbox_area" maxlength="20" size="45" value="0" type="text"></td>
+
+        <td align="center"><input name="btclear" value="  C /CE  " onClick="Clear()" type="button"></td>
+
+        <td align="center"><input name="equals" value="     =     " onClick="Answer()" type="button"></td>
+
+        <td align="center">&nbsp;</td>
+
+        <td align="center"><font face="arial, helevica" size="+1">TI - 39Xa</font></td>
+
+      </tr>
+
+      <tr>
+
+        <td align="center"><input name="Seven" value="  7  " onClick="AddAChar('7')" type="button"></td>
+
+        <td align="center"><input name="Eight" value="  8  " onClick="AddAChar('8')" type="button"></td>
+
+        <td align="center"><input name="Nine" value="  9  " onClick="AddAChar('9')" type="button"></td>
+
+        <td align="center"><input name="btplus" value="  +  " onClick="AddAChar('+')" type="button"></td>
+
+        <td align="center"><input name="btsub" value="  -  " onClick="AddAChar('-')" type="button"></td>
+
+        <td align="center"><input name="btsin" value="  sin  " onClick="sin()" type="button"></td>
+
+        <td align="center"><input name="btcos" value="  cos  " onClick="cos()" type="button"></td>
+
+        <td align="center"><input name="bttan" value="  tan  " onClick="tan()" type="button"></td>
+
+      </tr>
+
+      <tr>
+
+        <td align="center"><input name="Four" value="  4  " onClick="AddAChar('4')" type="button"></td>
+
+        <td align="center"><input name="Five" value="  5  " onClick="AddAChar('5')" type="button"></td>
+
+        <td align="center"><input name="Six" value="  6  " onClick="AddAChar('6')" type="button"></td>
+
+        <td align="center"><input name="btmult" value="  x  " onClick="AddAChar('*')" type="button"></td>
+
+        <td align="center"><input name="btdiv" value="  /  " onClick="AddAChar('/')" type="button"></td>
+
+        <td align="center"><input name="btasin" value=" asin " onClick="asin()" type="button"></td>
+
+        <td align="center"><input name="btacos" value=" acos " onClick="acos()" type="button"></td>
+
+        <td align="center"><input name="btatan" value=" atan " onClick="atan()" type="button"></td>
+
+      </tr>
+
+
+      <tr>
+
+        <td align="center"><input name="One" value="  1  " onClick="AddAChar('1')" type="button"></td>
+
+        <td align="center"><input name="Two" value="  2  " onClick="AddAChar('2')" type="button"></td>
+
+        <td align="center"><input name="Three" value="  3  " onClick="AddAChar('3')" type="button"></td>
+
+        <td align="center"><input name="Percent" value="  %  " onClick="percent()" type="button"></td>
+
+        <td align="center"><input name="Sqrt" value=" sqrt " onClick="sqrt()" type="button"></td>
+
+        <td align="center"><input name="Pi" value="  Pi   " onClick="pi()" type="button"></td>
+
+        <td align="center"><input name="cubbut" value=" x^2 " onClick="square()" type="button"></td>
+		
+	     <td align="center"><input name="e" value=" e^1 " onClick="Euler()" type="button"></td>
+
+        
+
+      </tr>
+
+      <tr>
+
+        <td align="center"><input name="Zero" value="  0  " onClick="AddAChar('0')" type="button"></td>
+
+        <td align="center"><input name="TwoZeroes" value="  00  " onClick="AddAChar('00')" type="button"></td>
+
+        <td align="center"><input name="dot" value="  .  " onClick="AddAChar('.')" type="button"></td>
+
+        <td align="center"><input name="neg" value="  +/-  " onClick="negative()" type="button"></td>
+		
+		<td align="center"><input name="rounding" value=" round " onClick="Round()" type="button"></td>
+ 
+            <td align="center"><input name="btrdm" value=" Rdm " onClick="rand()" type="button"></td>
+
+        <td align="center"><input name="btlog" value="  log  " onClick="Log()" type="button"></td>
+
+        <td align="center"><input name="btln" value="    ln    " onClick="natLog()" type="button"></td>
+
+      </tr>
+
+    </tbody>
+  </table>
+</form>
+<br  />
+<br  />
+<h2 align="center"> Function Key: </h2> 
+<br  />
+  <ul>
+     <li><strong>Sin:</strong> The Sine of x</li>
+     <li><strong>Cos:</strong> The Cosine of x</li>
+     <li><strong>Tan:</strong> The Tangent of x</li>
+     <li><strong>Asin:</strong> The ArcSine (inverse sine of x)</li>
+     <li><strong>Acos:</strong> The ArcCosine (inverse cosine of x)</li>
+     <li><strong>Atan:</strong> The ArcTangent (inverse tangent of x)</li>
+     <li><strong>Sqrt:</strong> Square Root</li>
+     <li><strong>Pi:</strong> Pi constant: 3.14159...</li>
+     <li><strong>x^2:</strong>The square of any number</li>
+     <li><strong>e^1:</strong> Euler's constant (e): 2.71828...</li>
+     <li><strong>Round:</strong>Rounds decimal numbers</li>
+     <li><strong>Rdm:</strong> Provides random numbers between 0 and 1</li>
+     <li><strong>Log:</strong> Returns the logarithm (in decimals) of the number</li>
+     <li><strong>Ln:</strong> Natural logarithm</li>
+</ul>
+</body>
+</html>
+
+
+
